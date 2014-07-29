@@ -66,3 +66,6 @@ TARGET_RECOVERY_FSTAB := device/htc/enrc2b/ramdisk/fstab.enrc2b
 RECOVERY_FSTAB_VERSION := 2 
 
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
+
+# Set device resolution for OmniRom
+DEVICE_RESOLUTION := 720x1280
