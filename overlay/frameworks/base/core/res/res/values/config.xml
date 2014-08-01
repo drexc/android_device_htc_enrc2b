@@ -239,11 +239,11 @@
 
      <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
      <bool name="config_intrusiveNotificationLed">true</bool>
-     
+
     <!-- Shutdown if the battery temperature exceeds (this value * 0.1) Celsius. -->
     <integer name="config_shutdownBatteryTemperature">600</integer>
 
-    <!-- Allow changing button backlight brightness in Settings -->
-    <!-- <integer name="config_buttonBrightnessSettingDefault">140</integer> -->
-    <!-- <bool name="config_deviceHasVariableButtonBrightness">true</bool> -->
+    <!-- Allow changing button backlight brightness in Settings
+    <integer name="config_buttonBrightnessSettingDefault">140</integer>
+    <bool name="config_deviceHasVariableButtonBrightness">true</bool> -->
 </resources>

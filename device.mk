@@ -1,4 +1,4 @@
-#
+  #
 # Copyright (C) 2012 The Android Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +17,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-#Recovery
+# Recovery
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/sbin/choice_fn:recovery/root/sbin/choice_fn \
     $(LOCAL_PATH)/recovery/sbin/detect_key:recovery/root/sbin/detect_key \
@@ -27,6 +27,7 @@ PRODUCT_COPY_FILES += \
 
 # Files needed for boot image
 PRODUCT_COPY_FILES := \
+         device/htc/enrc2b/twrp.fstab:recovery/root/etc/twrp.fstab \
     $(LOCAL_PATH)/ramdisk/init.enrc2b.rc:root/init.enrc2b.rc \
     $(LOCAL_PATH)/ramdisk/init.usb.rc:root/init.usb.rc \
     $(LOCAL_PATH)/ramdisk/init.trace.rc:root/init.trace.rc \
@@ -53,7 +54,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 $(LOCAL_PATH)/bluetooth/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
 
-#Audio packages
+# Audio packages
 PRODUCT_PACKAGES += \
     libinvensense_mpl
 
@@ -62,15 +63,19 @@ PRODUCT_PACKAGES += \
     sdcard \
     libmtp
 
-# Hostapd   
+# Hostapd
 PRODUCT_PACKAGES += \
     hostapd_cli \
     calibrator
 
-#NFC
+# NFC
 PRODUCT_PACKAGES += \
     libnfc_ndef
-        
+
+# Other Apps
+PRODUCT_PACKAGES += \
+    OmniTorch
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.locationfeatures=1 \
     ro.setupwizard.enable_bypass=1 \
@@ -79,7 +84,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dexopt-flags=m=y \
     persist.sys.usb.config=mtp,adb
 
-#Performance tuning (http://source.android.com/devices/tuning.html)
+# Performance tuning (http://source.android.com/devices/tuning.html)
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.disable_scissor_opt=true \
     ro.hwui.texture_cache_size=32 \
