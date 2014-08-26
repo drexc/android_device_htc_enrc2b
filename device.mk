@@ -14,7 +14,6 @@
 # limitations under the License.
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
@@ -24,11 +23,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/sbin/detect_key:recovery/root/sbin/detect_key \
     $(LOCAL_PATH)/recovery/sbin/offmode_charging:recovery/root/sbin/offmode_charging \
     $(LOCAL_PATH)/recovery/sbin/power_test:recovery/root/sbin/power_test \
-    $(LOCAL_PATH)/recovery/sbin/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
+    $(LOCAL_PATH)/recovery/sbin/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
+    $(LOCAL_PATH)/recovery/init.recovery.enrc2b.rc:recovery/root/init.recovery.enrc2b.rc
 
+    
 # Files needed for boot image
 PRODUCT_COPY_FILES := \
-         device/htc/enrc2b/twrp.fstab:recovery/root/etc/twrp.fstab \
     $(LOCAL_PATH)/ramdisk/init.enrc2b.rc:root/init.enrc2b.rc \
     $(LOCAL_PATH)/ramdisk/init.usb.rc:root/init.usb.rc \
     $(LOCAL_PATH)/ramdisk/init.trace.rc:root/init.trace.rc \

@@ -458,10 +458,60 @@ on property:ro.hdmi.enable=true
     #set touch permissions
     chown system system /sys/android_touch/unlock
 
-    chown system system /sys/class/leds/button-backlight/currents
+    # Permissions for System Server and daemons.
+    chown radio system /sys/android_power/state
+    chown radio system /sys/android_power/request_state
+    chown radio system /sys/android_power/acquire_full_wake_lock
+    chown radio system /sys/android_power/acquire_partial_wake_lock
+    chown radio system /sys/android_power/release_wake_lock
+    chown radio system /sys/power/state
+    chown radio system /sys/power/wake_lock
+    chown radio system /sys/power/wake_unlock
+    chown system system /sys/power/state
+    chown system system /sys/power/wakeup_count
+    chown radio system /sys/power/wake_lock
+    chown radio system /sys/power/wake_unlock
+    chmod 0660 /sys/power/state
+    chmod 0660 /sys/power/wake_lock
+    chmod 0660 /sys/power/wake_unlock
+
+    chown system system /sys/class/timed_output/vibrator/enable
+    chown system system /sys/class/leds/keyboard-backlight/brightness
+    chown system system /sys/class/leds/lcd-backlight/brightness
+    
+    chown system system /sys/class/leds/button-backlight/brightness
     chown system system /sys/class/leds/button-backlight/blink
     chown system system /sys/class/leds/button-backlight/off_timer    
+    chown system system /sys/class/leds/button-backlight/button_brightness    
     chown system system /sys/class/leds/button-backlight/slow_blink_brightness_limit    
+            
+    chown system system /sys/class/leds/jogball-backlight/brightness
+    
+    chown system system /sys/class/leds/red/brightness
+    chown system system /sys/class/leds/green/brightness
+    chown system system /sys/class/leds/amber/brightness
+    chown system system /sys/class/leds/blue/brightness
+    chown system system /sys/class/leds/amber/blink
+    chown system system /sys/class/leds/green/blink
+    chown system system /sys/class/leds/amber/off_timer
+    chown system system /sys/class/leds/green/off_timer
+    chown system system /sys/class/leds/red/device/grpfreq
+    chown system system /sys/class/leds/red/device/grppwm
+    chown system system /sys/class/leds/red/device/blink
+    chown system system /sys/class/leds/red/brightness
+    chown system system /sys/class/leds/green/brightness
+    chown system system /sys/class/leds/blue/brightness
+    chown system system /sys/class/leds/red/device/grpfreq
+    chown system system /sys/class/leds/red/device/grppwm
+    chown system system /sys/class/leds/red/device/blink
+    chown system system /sys/class/timed_output/vibrator/enable
+    chown system system /sys/kernel/ipv4/tcp_wmem_min
+    chown system system /sys/kernel/ipv4/tcp_wmem_def
+    chown system system /sys/kernel/ipv4/tcp_wmem_max
+    chown system system /sys/kernel/ipv4/tcp_rmem_min
+    chown system system /sys/kernel/ipv4/tcp_rmem_def
+    chown system system /sys/kernel/ipv4/tcp_rmem_max
+    chown root radio /proc/cmdline  
             
 service choice_fn /sbin/choice_fn
     oneshot

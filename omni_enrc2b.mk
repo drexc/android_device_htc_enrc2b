@@ -20,6 +20,8 @@
 # Get the prebuilt list of APNs
 $(call inherit-product, vendor/omni/config/gsm.mk)
 
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
@@ -31,7 +33,7 @@ PRODUCT_NAME := omni_enrc2b
 PRODUCT_DEVICE := enrc2b
 PRODUCT_BRAND := Android
 PRODUCT_MODEL := One X+
-PRODUCT_MANUFACTURER := HTC
+PRODUCT_MANUFACTURER := Htc
 
 # Kernel inline build
 TARGET_KERNEL_SOURCE := kernel/htc/enrc2b
